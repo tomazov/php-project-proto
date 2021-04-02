@@ -1,4 +1,8 @@
+ifneq ("$(wildcard .env.local)","")
+include .env.local
+else
 include .env
+endif
 export
 
 export UID=$(shell ./uid.sh)
